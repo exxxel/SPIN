@@ -4,9 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SPIN: Sidam Prophecy Internal Network</title>
+    <style>
+        /* Fullscreen Loader */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100vh;
+            background: black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: white;
+            font-family: Arial, sans-serif;
+            z-index: 9999;
+        }
+
+        /* Hides the loader after page fully loads */
+        body.loaded #loading-screen {
+            display: none;
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to SPIN</h1>
-    <p>The Sidam Prophecy Internal Network is now live.</p>
+
+    <!-- Loading Screen -->
+    <div id="loading-screen">Loading SPIN...</div>
+
+    <!-- Main Content -->
+    <div id="content" style="display: none;">
+        <h1>Welcome to SPIN</h1>
+        <p>The Sidam Prophecy Internal Network is now live.</p>
+    </div>
+
+    <script>
+        // Simulate loading delay
+        setTimeout(() => {
+            document.body.classList.add("loaded"); // Hide the loader
+            document.getElementById("content").style.display = "block"; // Show content
+        }, 2000); // Adjust time as needed
+    </script>
+
 </body>
 </html>
